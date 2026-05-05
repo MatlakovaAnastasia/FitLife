@@ -16,21 +16,20 @@ except ValueError:
     sys.exit("Программа завершена из-за ошибки")
 
 try:
-    user_weight = float(input("Введите ваш вес: "))
+    user_weight = float(input("Введите ваш вес (например, 50.1): "))
 except ValueError:
     print("Пожалуйста, введите вес в числовом формате. Например, 50.1 или 50.")
     sys.exit("Программа завершена из-за ошибки")
 
 try:
-    user_height = float(input("Введите ваш рост в метрах: "))
+    user_height = float(input("Введите ваш рост в метрах (например, 1.78): "))
 except ValueError:
     print("Пожалуйста, введите рост в числовом формате в метрах.", end=" ")
     print("Например, 1.78 или 2 .")
     sys.exit("Программа завершена из-за ошибки")
 
 # расчёт индекса массы тела
-bmi = user_weight / (user_height ** 2)
-bmi = round(bmi, 1)
+bmi = round(user_weight / (user_height ** 2), 1)
 
 # расчёт нормы воды
 water_ml = user_weight * WATER_PER_KG
